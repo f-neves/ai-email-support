@@ -11,6 +11,21 @@ web** onde uma pessoa revisa, edita e aprova/envia — ou descarta.
 
 ---
 
+## 🖼️ Painel (demo com seed)
+
+Lista de e-mails com métricas, badges de categoria/urgência/status, medidor de
+confiança e a tag **"revisar"** para confiança < 0,7:
+
+![Lista de e-mails](./docs/painel-lista.png)
+
+Visão de detalhe: e-mail original, resumo, rascunho **editável** e ações de
+**Aprovar & Enviar** / **Descartar** (capturas do painel rodando localmente com
+os 5 e-mails de exemplo do seed):
+
+![Detalhe do e-mail](./docs/painel-detalhe.png)
+
+---
+
 ## ✨ Funcionalidades
 
 - **OAuth2 com o Google** para ler e enviar e-mails via Gmail API.
