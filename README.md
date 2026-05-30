@@ -210,3 +210,9 @@ Sincronizar/Seed → Lista (categoria · urgência · status · confiança)
 - Tokens do Google ficam no banco (tabela `OAuthToken`), nunca em arquivo de log.
 - Sem chave Anthropic, a IA fica desabilitada e o app avisa na interface — o seed
   continua demonstrável.
+
+---
+
+## 📄 Licença
+
+Distribuído sob a licença **MIT**. Veja o arquivo [`LICENSE`](./LICENSE).

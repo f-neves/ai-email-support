@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Autoresponder de e-mails de suporte assistido por IA (Claude) com painel de revisão humana.",
+  "license": "MIT",
   "workspaces": [
     "server",
     "web"
