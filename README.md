@@ -1,5 +1,7 @@
 # ✉️ AI Email Support
 
+[![CI](https://github.com/f-neves/ai-email-support/actions/workflows/ci.yml/badge.svg)](https://github.com/f-neves/ai-email-support/actions/workflows/ci.yml)
+
 Autoresponder de e-mails de suporte **assistido por IA**. Lê e-mails de uma conta
 Gmail (label **Suporte**), classifica cada um, gera um rascunho de resposta com a
 API da Anthropic (Claude) baseada numa base de conhecimento, e oferece um **painel
