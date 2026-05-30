@@ -1,0 +1,48 @@
+// Prisma schema — SQLite for zero-config local dev.
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// One support email + its AI analysis + the human-reviewable draft.
+model Email {
+  id         String   @id @default(cuid())
+  gmailId    String?  @unique // null for seeded/demo emails
+  threadId   String? // Gmail thread id, used to reply in-thread
+  sender     String
+  subject    String
+  body       String
+  receivedAt DateTime
+
+  // Filled by the classification step (claude-haiku-4-5)
+  category String? // duvida | reclamacao | elogio | suporte_tecnico | financeiro | outro
+  urgency  String? // baixa | media | alta
+  language String? // ISO-ish code: pt, en, es...
+  summary  String?
+
+  // Filled by the drafting step (claude-sonnet-4-6)
+  draft      String?
+  confidence Float? // 0..1
+
+  status   String   @default("pending") // pending | reviewed | sent | discarded
+  autoSent Boolean  @default(false)
+  sentAt   DateTime?
+  error    String? // last processing error, if any
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([status])
+}
+
+// Single-row store for the Google OAuth tokens (access + refresh).
+model OAuthToken {
+  id        Int      @id @default(1)
+  tokens    String // JSON blob of google OAuth2 credentials
+  email     String?
+  updatedAt DateTime @updatedAt
+}

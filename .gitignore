@@ -1,0 +1,23 @@
+node_modules/
+dist/
+build/
+*.log
+
+# Env & secrets
+.env
+.env.local
+server/.env
+web/.env
+
+# Prisma / SQLite
+server/prisma/*.db
+server/prisma/*.db-journal
+server/prisma/migrations/dev/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
